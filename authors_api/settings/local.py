@@ -11,4 +11,4 @@ SECRET_KEY = env('DANGO_SECRET_KEY', default='qScrYyvjBEeWPFLeGtQhOLVoPKURuRVujd
 
 SECRET_KEY = 'django-insecure-a8pcqrgow1@2e&#%6nq!mwuqfr1ir^&0e2a9f1hjr1kyjj8imw'
 
-ALLOWED_HOSTS = ["locahost", "0.0.0.0", "127.0.0.1"]
+ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
