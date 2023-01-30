@@ -4,9 +4,10 @@
 
 set -o errexit # if commans fail the entire script fails
 set -o pipefail # fail if any of your pipe command fails
-set -o nounexit # exit if any of your variablesis not set
+set -o nounset # exit if any of your variables is not set
 
 
+export DATABASE_URL="postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}"
 export DATABASE_URL="postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}"
 
 
@@ -20,7 +21,7 @@ try:
         user="${POSTGRES_USER}",
         password="${POSTGRES_PASSWORD}",
         host="${POSTGRES_HOST}",
-        port="${POSTGRESS_PORT}"
+        port="${POSTGRES_PORT}"
     )
 except psycopg2.OperationalError:
     sys.exit(-1)

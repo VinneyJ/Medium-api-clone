@@ -2,7 +2,7 @@
 
 set -o errexit # if commands fail the entire script fails
 set -o pipefail # fail if any of your pipe command fails
-set -o nounexit # exit if any of your variablesis not set
+set -o nounset # exit if any of your variablesis not set
 
 working_dir="$(dirname ${0})"
 source "${working_dir}/_sourced/constants.sh"
