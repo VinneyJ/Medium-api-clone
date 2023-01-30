@@ -18,8 +18,8 @@ services:
             - ./.envs/.local/.postgres
         depends_on:
             - postgres
-            - mailhog
-            - redis
+            # - mailhog
+            # - redis
         networks:
             - authors-api-live
 
