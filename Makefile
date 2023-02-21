@@ -24,6 +24,9 @@ collectstatic:
 superuser:
 	docker-compose -f local.yml run --rm api python3 manage.py createsuperuser
 
+# ping-api:
+# 	docker-compose -f local.yml exec authors-src_nginx_1 ping api
+
 down-v:
 	docker-compose -f local.yml down -v
 
