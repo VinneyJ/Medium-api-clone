@@ -9,6 +9,14 @@ DEBUG =True
 SECRET_KEY = env('DANGO_SECRET_KEY', default='qScrYyvjBEeWPFLeGtQhOLVoPKURuRVujdvXkPwJMfpKRAelLx')
 
 
-SECRET_KEY = 'django-insecure-a8pcqrgow1@2e&#%6nq!mwuqfr1ir^&0e2a9f1hjr1kyjj8imw'
 
 ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
+
+EMAIL_BACKEND="djcelery_email.backends.CeleryEmailBackend"
+
+
+EMAIL_HOST=env("EMAIL_HOST", default="mailhog")
+EMAIL_PORT=env("EMAIL_PORT")
+DEFAULT_FROM_EMAIL="info@authors-api.com"
+DOMAIN=env("DOMAIN")
+SITE_NAME="Authors API"
