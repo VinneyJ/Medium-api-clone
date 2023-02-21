@@ -23,7 +23,7 @@ from rest_framework import permissions
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Authors API",
+        title="Authors Medium Clone API",
         default_version = "v1",
         description="API endpoints for the Authors API project",
         contact=openapi.Contact(email="medium.clone@gmail.com"),
