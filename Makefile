@@ -14,7 +14,7 @@ logs:
 migrate:
 	docker-compose -f local.yml run --rm api python3 manage.py migrate
 
-makemigration:
+makemigrations:
 	docker-compose -f local.yml run --rm api python3 manage.py makemigrations
 
 collectstatic:
