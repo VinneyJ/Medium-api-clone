@@ -50,3 +50,36 @@ COPY . ${APP-HOME}
 
 ENTRYPOINT [ "/entrypoint" ]
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

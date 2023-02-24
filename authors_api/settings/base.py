@@ -1,4 +1,4 @@
-
+from datetime import timedelta
 
 from pathlib import Path
 import environ
@@ -42,6 +42,8 @@ THIRD_PARTY_APPS = [
     'drf_yasg',
     'corsheaders',
     'djcelery_email',
+    "djoser",
+    "rest_framework_simplejwt",
 ]
 
 LOCAL_APPS = ["core_apps.common", "core_apps.users", "core_apps.profiles",]
@@ -175,7 +177,7 @@ CORS_URLS_REGEX =r'^/api/.*$'
 
 AUTH_USER_MODEL = "users.User"
 
-
+# Celery Configuration
 CELERY_BROKER_URL=env("CELERY_BROKER")
 CELERY_RESULT_BACKEND=env("CELERY_BACKEND")
 CELERY_TIMEZONE= "Africa/Nairobi"
@@ -184,11 +186,53 @@ CELERY_TASK_SERIALIZER="json"
 CELERY_RESULT_SERIALIZER="json"
 
 
-
+# Rest Framework configurations
 REST_FRAMEWORK ={
     "EXCEPTION_HANDLER": "core_apps.common.exceptions.common_exception_handler",
     "NON_FIELD_ERRORS_KEY": "error",
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
 }
+
+
+
+# Simple Jwt configuratio for authentication
+SIMPLE_JWT = {
+    "AUTH_HEADER_TYPES": (
+        "Bearer",
+        "JWT",
+    ),
+
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=720),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "SIGNING_KEY": env("SIGNING_KEY"),
+    "AUTH_HEADER_NAME": "HTTP_AUTHORIZATION",
+    "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken")
+}
+
+
+#djoser config
+DJOSER = {
+    "LOGIN_FIELD": "email",
+    "USER_CREATE_PASSWORD_RETYPE": True,
+    "USERNAME_CHANGED_EMAIL_CONFIMATION": True,
+    "PASSWORD_CHANGED_EMAIL_CONFIRMATION": True,
+    "SEND_CONFIRMATION_EMAIL": True,
+    "PASSWORD_RESET_CONFIRM_URL": "password/reset/confirm/{uid}/{token}",
+    "SET_PASSWORD_RETYPE": True,
+    "PASSWORD_RESET_CONFIRM_RETYPE": True,
+    "USERNAME_RESET_CONFIRM_URL": "email/reset/confirm/{uid}/{token}",
+    "ACTIVATION_URL": "activate/{uid}/{token}",
+    "SEND_ACTIVATION_EMAIL": True,
+    "SERIALIZERS": {
+        "user_create": "core_apps.users.serializers.CreateUserSerializer",
+        "user": "core_apps.users.serializers.UserSerializer",
+        "current_user": "core_apps.users.serializers.UserSerializer",
+        "user_delete": "djoser.serializers.UserDeleteSerializer",
+    },
+}
+
 
 
 
