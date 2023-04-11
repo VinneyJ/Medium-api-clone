@@ -55,7 +55,7 @@ LOCAL_APPS = [
     "core_apps.articles",
     "core_apps.ratings",
     "core_apps.favorites",
-    "core_apps.reactions"
+    "core_apps.reactions",
     "core_apps.search",
     "core_apps.comments",
 ]
@@ -255,7 +255,7 @@ HAYSTACK_CONNECTIONS = {
 
 HAYSTACK_SEARCH_RESULT_PER_PAGE = 10
 
-HAYSTACK_SIGNAL_PROCESSOR = "haystack.signals..RealtimeSignalProcessor"
+HAYSTACK_SIGNAL_PROCESSOR = "haystack.signals.RealtimeSignalProcessor"
 
 
 
