@@ -16,7 +16,7 @@ class CommentAPIView(generics.CreateAPIView):
 
     def post(self, request, **kwargs):
         try:
-            slug = self.kwargs.get(slug=slug)
+            slug = self.kwargs.get("slug")
             article = Article.objects.get(slug=slug)
         except Article.DoesNotExist:
             raise NotFound("Article not found.")
@@ -34,7 +34,7 @@ class CommentAPIView(generics.CreateAPIView):
     
     def get(self, request, **kwargs):
         try:
-            slug = self.kwargs.get(slug=slug)
+            slug = self.kwargs.get("slug")
             article = Article.objects.get(slug=slug)
         except Article.DoesNotExist:
             raise NotFound("Article not found.")

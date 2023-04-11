@@ -29,7 +29,7 @@ class Reaction(TimeStampedUUIDModel):
     article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name="article_reactions")
     reaction = models.IntegerField(verbose_name=_("like-dislike"), choices=Reactions.choices)
 
-    object = ReactionManager()
+    objects = ReactionManager()
 
     class Meta:
         unique_together = ["user", "article", "reaction"]

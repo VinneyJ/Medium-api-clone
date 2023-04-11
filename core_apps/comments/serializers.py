@@ -12,12 +12,12 @@ class CommentSerializer(serializers.ModelSerializer):
 
     def get_created_at(self, obj):
         now = obj.created_at
-        formatted_date = now.strftime("%m/%d/%Y, %H:M:%S")
+        formatted_date = now.strftime("%m/%d/%Y, %H:%M:%S")
         return formatted_date
     
     def get_updated_at(self, obj):
         then = obj.updated_at
-        formatted_date = then.strftime("%m/%d/%Y, %H:M:%S")
+        formatted_date = then.strftime("%m/%d/%Y, %H:%M:%S")
         return formatted_date
     
 
@@ -34,12 +34,12 @@ class CommentListSerializer(serializers.ModelSerializer):
 
     def get_created_at(self, obj):
         now = obj.created_at
-        formatted_date = now.strftime("%m/%d/%Y, %H:M:%S")
+        formatted_date = now.strftime("%m/%d/%Y, %H:%M:%S")
         return formatted_date
     
     def get_updated_at(self, obj):
         then = obj.updated_at
-        formatted_date = then.strftime("%m/%d/%Y, %H:M:%S")
+        formatted_date = then.strftime("%m/%d/%Y, %H:%M:%S")
         return formatted_date
     
 
