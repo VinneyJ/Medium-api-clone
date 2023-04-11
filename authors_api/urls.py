@@ -48,6 +48,6 @@ urlpatterns = [
     path("api/v1/haystack/", include("core_apps.search.urls")),
 ]
 
-admin.site.site_header = "Authors API Admin"
-admin.site.site_title = "Authors API Admin Portal"
-admin.site.index_title = "Welcome to the Authors Medium API clone Portal"
+admin.site.site_header = "Medium Backend API Admin"
+admin.site.site_title = "Medium API Admin Portal"
+admin.site.index_title = "Welcome to the Medium Backend API clone Portal"
