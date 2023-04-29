@@ -23,6 +23,18 @@ services:
         networks:
             - authors-api-live
 
+    client:
+        build:
+            context: ./client
+            dockerfile: ./docker/local/Dockerfile
+        restart: on-failure
+        volumes:
+            - ./client:/app
+            - /app/node_modules
+        networks:
+            - authors-api-live
+
+
     postgres:
         build:
             context: .

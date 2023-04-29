@@ -10,7 +10,7 @@ SECRET_KEY = env('DANGO_SECRET_KEY', default='qScrYyvjBEeWPFLeGtQhOLVoPKURuRVujd
 
 
 
-ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
+ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1", "api"]
 
 EMAIL_BACKEND="djcelery_email.backends.CeleryEmailBackend"
 

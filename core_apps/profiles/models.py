@@ -40,7 +40,7 @@ class Profile(TimeStampedUUIDModel):
         blank=False,
         null=False,
     )
-    profile_photo = models.ImageField(verbose_name=_("profile phot"), default="/profile_defaul.png")
+    profile_photo = models.ImageField(verbose_name=_("profile photo"), default="/profile_defaul.png")
     twitter_handle = models.CharField(verbose_name=_("twitter handle"), max_length=20, blank=True)
     follows = models.ManyToManyField("self", symmetrical=False, related_name="followed_by", blank=True)
 
