@@ -1,5 +1,5 @@
-# Medium Backend API Clone
-This is a clone of the Medium Backend API built using Django and Django Rest Framework (DRF). It is a fully-featured API that allows users to register, login, create articles, rate articles, upvote or downvote articles, add articles to their favourites, comment on articles and search the API. The API also tracks the number of views on each article.
+# penHouse
+This is a clone of the Medium like backend API built using Django and Django Rest Framework (DRF). It is a fully-featured API that allows users to register, login, create articles, rate articles, upvote or downvote articles, add articles to their favourites, comment on articles and search the API. The API also tracks the number of views on each article.
 
 ## Technologies Used
 - Django
