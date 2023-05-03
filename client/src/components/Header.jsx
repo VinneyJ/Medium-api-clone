@@ -1,10 +1,24 @@
 import React from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { GiPencil } from 'react-icons/gi';
+import {FaSignInAlt, FaSignOutAlt} from 'react-icons/fa';
+import {useDispatch, useSelector} from 'react-redux';
+import {useNavigate} from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
+import {logout, reset} from '../features/auth/authSlice';
 
 
 const Header = () => {
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+    const {user} = useSelector((state)=>state.auth)
+
+    const logoutHandler = () => {
+        dispatch(logout());
+        dispatch(reset());
+        navigate("/");
+    }
   return (
     <header>
         <Navbar fixed="top" bg="dark" variant="dark" expand="lg" collapseOnSelect>
@@ -27,14 +41,24 @@ const Header = () => {
                         <Nav.Link>Articles</Nav.Link>
                     </LinkContainer>
                     
-                    
-                    <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">
-                        Another action
-                    </NavDropdown.Item>
+                    {user ? (
+                        <NavDropdown title={user.first_name ? user.first_name : 'Welcome!'} id="username">
+                        <LinkContainer to="/profile">
+                            <NavDropdown.Item>Profile</NavDropdown.Item>
+                        </LinkContainer>
+                        
+                        <NavDropdown.Item onClick={logoutHandler}>
+                            <FaSignOutAlt /> Logout
+                        </NavDropdown.Item>
 
-                    </NavDropdown>
+                        </NavDropdown>
+                    ):(
+                        <LinkContainer to="/login">
+                            <Nav.Link>
+                                <FaSignInAlt/> Login
+                            </Nav.Link>
+                        </LinkContainer>
+                    )}
                 </Nav>
                 </Navbar.Collapse>
             </Container>
