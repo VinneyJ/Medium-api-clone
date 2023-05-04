@@ -24,8 +24,9 @@ function App() {
             <Route path="/articles" element={<ArticlesPage />}/>
             <Route path="/login" element={<LoginPage />}/>
           </Routes>
-          <ToastContainer theme='dark'/>
+          
         </main>
+        <ToastContainer theme='dark'/>
         <Footer />
       </Router>
       

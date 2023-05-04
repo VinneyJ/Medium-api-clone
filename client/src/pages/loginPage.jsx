@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import {Button,Col, Container, Form, Row} from 'react-bootstrap';
 import {FaSignInAlt} from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useLocation, useNavigate} from 'react-router-dom';
+import { Link,  useNavigate} from 'react-router-dom'; //useLocation,
 import { toast } from 'react-toastify';
 import Spinner from "../components/Spinner";
 //import Title from '../components/Title';
@@ -27,7 +27,7 @@ const LoginPage = () => {
         }
 
         if (isSuccess || user) {
-            navigate("/")
+            navigate("/articles")
         }
 
         dispatch(reset())
