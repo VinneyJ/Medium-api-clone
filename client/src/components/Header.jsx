@@ -1,11 +1,11 @@
 import React from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { GiPencil } from 'react-icons/gi';
-import {FaSignInAlt, FaSignOutAlt} from 'react-icons/fa';
+import {FaSignInAlt, FaSignOutAlt, FaUserAlt} from 'react-icons/fa';
 import {useDispatch, useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
-import {logout, reset} from '../features/auth/authSlice';
+import {register, logout, reset} from '../features/auth/authSlice';
 
 
 const Header = () => {
@@ -42,7 +42,7 @@ const Header = () => {
                     </LinkContainer>
                     
                     {user ? (
-                        <NavDropdown title={user.first_name ? user.first_name : 'Welcome!'} id="username">
+                        <NavDropdown title={user.username ? user.username : 'Welcome!'} id="username">
                         <LinkContainer to="/profile">
                             <NavDropdown.Item>Profile</NavDropdown.Item>
                         </LinkContainer>
@@ -53,11 +53,20 @@ const Header = () => {
 
                         </NavDropdown>
                     ):(
-                        <LinkContainer to="/login">
-                            <Nav.Link>
-                                <FaSignInAlt/> Login
-                            </Nav.Link>
-                        </LinkContainer>
+                        <>
+                            <LinkContainer to="/login">
+                                <Nav.Link>
+                                    Login
+                                </Nav.Link>
+                            </LinkContainer>
+
+                            <LinkContainer to="/register">
+                                <Nav.Link>
+                                    <FaUserAlt /> Register
+                                </Nav.Link> 
+                            </LinkContainer>
+                        </>
+                                  
                     )}
                 </Nav>
                 </Navbar.Collapse>
