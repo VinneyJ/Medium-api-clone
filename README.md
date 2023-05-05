@@ -13,6 +13,7 @@ This is a clone of the Medium like backend API built using Django and Django Res
 - RabbitMQ
 - Haystack & Whoosh
 - Portainer
+- React & Redux-toolkit
 ## Setup
 # Prerequisites
 Before you can run the project, you need to have the following installed on your machine:
@@ -24,8 +25,8 @@ Before you can run the project, you need to have the following installed on your
 Clone the repository and cd into the project directory:
 
 ### Copy code
-```git clone https://github.com/VinneyJ/medium-api-clone.git```
-cd medium-backend-api-clone
+```git clone https://github.com/VinneyJ/penHouse.git```
+cd penHouse
 Create a .env file in the root directory and add the following environment variables:
 
 ```
