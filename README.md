@@ -1,5 +1,5 @@
 # penHouse
-This is a clone of the Medium like backend API built using Django and Django Rest Framework (DRF). It is a fully-featured API that allows users to register, login, create articles, rate articles, upvote or downvote articles, add articles to their favourites, comment on articles and search the API. The API also tracks the number of views on each article.
+Penhouse is a comprehensive blogging platform that revolutionizes the way people engage with written content. With Penhouse, users can seamlessly read and post blogs while enjoying a range of powerful features. These include the ability to follow other users, express appreciation through post likes, track views for valuable analytics insights, bookmark articles as favorites, and actively participate in the community through comments and ratings for both authors and articles.
 
 ## Technologies Used
 - Django
